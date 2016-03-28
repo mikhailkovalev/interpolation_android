@@ -1,0 +1,106 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text = "@string/n_equals"
+            />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"
+            android:text = "5"
+            android:inputType="number"
+            android:id = "@+id/numPoints"
+        />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height = "wrap_content"
+            android:layout_weight="1"
+            android:text = "@string/text_clear_button"
+            android:id = "@+id/clear"
+        />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id = "@+id/verticalAxis"
+            android:orientation="vertical"
+        />
+
+        <com.example.mixon.lagrangepolynomes.OpenGLView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"
+            android:id = "@+id/glView"
+            />
+
+        <TabHost
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id = "@android:id/tabhost"
+            android:layout_weight="1"
+        >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+            >
+                <TabWidget
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id = "@android:id/tabs"
+                />
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id = "@android:id/tabcontent"
+                >
+                    <include
+                        layout = "@layout/interpolate_tab"
+                        android:id = "@+id/Interpolation"
+                    />
+                    <include
+                        layout = "@layout/approximate_tab"
+                        android:id = "@+id/Approximation"
+                    />
+                    <include
+                        layout = "@layout/settings_tab"
+                        android:id = "@+id/Settings"
+                    />
+                </FrameLayout>
+            </LinearLayout>
+        </TabHost>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/horizontalAxis"
+    />
+
+    
+
+</LinearLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+    >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "Interpolate using"
+        />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id = "@+id/polynomial_spline_group"
+        >
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text = "Polynomial"
+                android:id = "@+id/polynomial"
+                android:checked="true"
+            />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text = "Spline"
+                android:id = "@+id/spline"
+            />
+        </RadioGroup>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "Type of boundary value for spline:"
+        />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id = "@+id/first_second_derivative_group"
+        >
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text = "First derivative"
+                android:id = "@+id/first_derivative"
+                android:checked="true"
+                android:enabled="false"
+            />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text = "Second derivative"
+                android:id = "@+id/second_derivative"
+                android:enabled="false"
+            />
+        </RadioGroup>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "Boundary value for spline:"
+        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+        >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text = "left: "
+                android:layout_weight="0"
+            />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text = "0"
+                android:id = "@+id/left_boundary_value"
+                android:inputType="numberDecimal|numberSigned"
+                android:layout_weight="1"
+                android:enabled="false"
+            />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text = "right: "
+                android:layout_weight="0"
+                />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text = "0"
+                android:id = "@+id/right_boundary_value"
+                android:inputType="numberDecimal|numberSigned"
+                android:layout_weight="1"
+                android:enabled="false"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
